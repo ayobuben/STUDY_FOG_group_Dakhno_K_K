@@ -80,12 +80,7 @@ def plot_experiment_1(variant_configs):
     
     print("\n--- Эксперимент 1: Масштабирование (Чувствительность) ---")
     for cfg in variant_configs:
-        sim = IoTSimulator(
-            n_edge=cfg['edge'],
-            n_fog=cfg['fog'],
-            n_cloud=cfg['cloud'],
-            n_tasks=cfg['edge'] * 2  # <-- Теперь задач будет больше, если устройств больше
-        )
+        sim = IoTSimulator(n_edge=cfg['edge'], n_fog=cfg['fog'], n_cloud=cfg['cloud'])
         lats, _ = sim.run()
         avg = np.mean(lats)
         means.append(avg)
