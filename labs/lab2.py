@@ -102,7 +102,7 @@ def simulate_buffer(n_tasks=30, read_interval_ms=120, title=""):
 
 print("=== ЭКСПЕРИМЕНТ 1: ОПТИМИЗАЦИЯ ЗАДЕРЖЕК ===")
 # 1. Базовая модель (Fog 30-80)
-avg_base = simulate_delay(fog_min=30, fog_max=80, title="Рис. 1 - Базовая сквозная задержка")
+avg_base = simulate_delay(fog_min=10, fog_max=40, title="Рис. 1 - Базовая сквозная задержка")
 print(f"Базовая средняя задержка: {avg_base:.2f} мс")
 
 # 2. Оптимизированная модель (Fog 10-40)
@@ -118,4 +118,5 @@ print("\n=== ЭКСПЕРИМЕНТ 2: БУФЕР СМАРТФОНА ===")
 simulate_buffer(read_interval_ms=60, title="Рис. 3 - Быстрое чтение (буфер пуст)")
 
 # 4. Медленное чтение (200 мс)
+
 simulate_buffer(read_interval_ms=200, title="Рис. 4 - Медленное чтение (накопление)")
